@@ -19,15 +19,15 @@ expect(elems.at(1).key()).to.be("userlist_PeterMiller");
 expect(users.children().at(0).key()).to.be("userlist_PetraMeier");
 expect(users.childAt(0).key()).to.be("userlist_PetraMeier");
 
-const users = users.find(User);
-expect(users.length).to.be(2);
+const userComps = users.find(User);
+expect(userComps.length).to.be(2);
 
-expect(users.at(0).key()).to.be.null();
+expect(userComps.at(0).key()).to.be.null();
 
-expect(users.at(0).props()).to.eql({firstName:"Petra", lastName:"Meier"});
-expect(users.at(1).props()).to.eql({firstName:"Peter", lastName:"Miller"});
+expect(userComps.at(0).props()).to.eql({firstName:"Petra", lastName:"Meier"});
+expect(userComps.at(1).props()).to.eql({firstName:"Peter", lastName:"Miller"});
 
-expect(users.at(0).prop("firstName")).to.eql("Petra");
+expect(userComps.at(0).prop("firstName")).to.eql("Petra");
 
   });
 });
