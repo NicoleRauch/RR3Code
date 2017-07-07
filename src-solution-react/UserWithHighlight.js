@@ -16,10 +16,10 @@ export default class extends Component {
     return (
       <div onClick={this._handleToggleClick}
          style={{cursor: "pointer"}}>
-        <label>Vorname: </label>
+        <label>First name: </label>
           <span style={{backgroundColor: highlightColor}}>
             {this.props.firstName}</span><br/>
-        <label>Nachname: </label>
+        <label>Last name: </label>
           <span>{this.props.lastName}</span><br/>
       </div>
     );

@@ -20,7 +20,7 @@ export default class extends Component {
           <input type="text" ref={c => this.inputs.lastName = c}/>
         </div>
         <div>
-          <button onClick={e =>
+          <button onClick={() =>
             this.props.submitUser({firstName: this.inputs.firstName.value, lastName: this.inputs.lastName.value}) }
           >Submit</button>
         </div>
