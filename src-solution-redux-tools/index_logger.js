@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
 import reducers from "../src-solution-redux-4/reducers";
@@ -8,12 +8,11 @@ import {Provider} from "react-redux";
 import {createStore, compose, applyMiddleware} from "redux";
 import logger from "redux-logger";
 
-const enhancedCompose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
 const store = createStore(reducers,
-  enhancedCompose(
+  compose(
     applyMiddleware(
       logger
+      // more middlewares go here if required
     )
   )
 );
