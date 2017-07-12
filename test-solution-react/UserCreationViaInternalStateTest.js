@@ -28,7 +28,7 @@ describe('UserCreation', function () {
 
   it("invokes the callback handler", function () {
     this.user.setState({firstName: "Nicole", lastName: "Rauch"});
-    const button = this.user.find("button").first();
+    const button = this.user.find("button"); // .first();
     button.simulate("click");
 
     expect(this.submit.called).to.be.true();
@@ -42,7 +42,7 @@ describe('UserCreation', function () {
     inputs.at(0).simulate("blur", {target: {value: "Nicole"}});
     inputs.at(1).simulate("blur", {target: {value: "Rauch"}});
 
-    const button = this.user.find("button").first();
+    const button = this.user.find("button"); // .first();
     button.simulate("click");
 
     expect(this.submit.getCall(0).args).to.eql([{firstName: "Nicole", lastName: "Rauch"}]);
