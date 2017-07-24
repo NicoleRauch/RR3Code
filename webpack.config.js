@@ -1,9 +1,9 @@
-var path = require("path");
-var webpack = require("webpack");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-var localPort = "3000";
-var proxiedServer = "http://localhost:8080";
+const localPort = "3000";
+const proxiedServer = "http://localhost:8080";
 
 module.exports = {
     entry: [
@@ -14,6 +14,10 @@ module.exports = {
         lazy: false,     // always compile immediately to save time
         compress: false, // do not spend time on this
         host: "0.0.0.0", // server is also available externally
+        overlay: {       // overlay for compiler issues
+          warnings: true,
+          errors: true
+        },
         port: localPort,
         hot: true,       // hot module replacement
         historyApiFallback: true,
@@ -38,7 +42,10 @@ module.exports = {
     ],
     module: {
         rules: [
-            { test: /\.js$/, use: [{loader: "babel-loader"}], include: path.resolve(__dirname, "src") }
+            { test: /\.js$/,
+              exclude: /(node_modules|bower_components)/,
+              use: [{loader: "babel-loader"}]
+            }
         ]
     }
 };

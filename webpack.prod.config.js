@@ -1,6 +1,6 @@
-var path = require("path");
-var webpack = require("webpack");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: [
@@ -21,9 +21,12 @@ module.exports = {
             }
         })
     ],
-    module: {
-        rules: [
-            { test: /\.js$/, use: [{loader: "babel-loader"}], include: path.resolve(__dirname, "src") }
-        ]
-    }
+  module: {
+    rules: [
+      { test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [{loader: "babel-loader"}]
+      }
+    ]
+  }
 };
