@@ -23,7 +23,7 @@ export default function (state = INITIAL_STATE, action = {}) {
   };
 }
 
-function users(currentUsers, action) {
+function users(currentUsers = INITIAL_STATE.users, action) {
   switch (action.type) {
     case USER_ADDED:
       return currentUsers.concat(action.payload);
