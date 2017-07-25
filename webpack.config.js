@@ -7,7 +7,7 @@ const proxiedServer = "http://localhost:8080";
 
 module.exports = {
     entry: [
-        "./src-solution-ultimately-with-async-calls/index"
+        "./src/index"
     ],
     devServer: {
         contentBase: "./build",
