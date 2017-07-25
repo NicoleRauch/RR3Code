@@ -14,7 +14,7 @@ Code for a 3-day React-Redux training.
 * Install required modules: `npm install`
 * Launch the development server:
    * Mac/Linux users: `npm start`
-   * Windows users: `npm start-win`
+   * Windows users: `npm run start-win`
 
 After that:
 
