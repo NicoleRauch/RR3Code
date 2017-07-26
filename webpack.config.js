@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const localPort = "3000";
-const proxiedServer = "http://localhost:8080";
+const proxiedServer = "http://localhost:5555";
 
 module.exports = {
     entry: [
