@@ -13,7 +13,6 @@ export class AppComponent extends Component {
   }
 
   render() {
-
     return (
       <div>
         <UserList users={this.props.users} />
