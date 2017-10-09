@@ -16,7 +16,9 @@ export class AppComponent extends Component {
     return (
       <div>
         <UserList users={this.props.users} />
-        <UserCreation submitUser={ user => { this.props.dispatch(submitUser(user)); } } />
+<UserCreation submitUser={
+  user => { this.props.dispatch(submitUser(user)); }
+} />
       </div>
     );
   }
