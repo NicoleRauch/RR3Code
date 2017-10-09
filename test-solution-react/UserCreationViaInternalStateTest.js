@@ -39,12 +39,13 @@ describe('UserCreation', function () {
 
   it("blackbox test", function () {
     const inputs = this.user.find("input");
-    inputs.at(0).simulate("blur", {target: {value: "Nicole"}});
-    inputs.at(1).simulate("blur", {target: {value: "Rauch"}});
+    inputs.at(0).simulate("blur", {target:{value: "Nicole"}});
+    inputs.at(1).simulate("blur", {target:{value: "Rauch"}});
 
     const button = this.user.find("button"); // .first();
     button.simulate("click");
 
-    expect(this.submit.getCall(0).args).to.eql([{firstName: "Nicole", lastName: "Rauch"}]);
+    expect(this.submit.getCall(0).args)
+      .to.eql([{firstName: "Nicole", lastName: "Rauch"}]);
   });
 });

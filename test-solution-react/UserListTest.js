@@ -8,7 +8,9 @@ import UserList from "../src-solution-react/UserList";
 
 describe('UserList', function () {
   it('displays the name that is passed to it', function () {
-const users = shallow(<UserList users={[{firstName:"Petra", lastName:"Meier"}, {firstName:"Peter", lastName:"Miller"}]} />);
+const users = shallow(<UserList users={[
+  {firstName:"Petra", lastName:"Meier"},
+  {firstName:"Peter", lastName:"Miller"}]} />);
 
 const elems = users.find("li");
 expect(elems.length).to.be(2);
@@ -24,8 +26,10 @@ expect(userComps.length).to.be(2);
 
 expect(userComps.at(0).key()).to.be.null();
 
-expect(userComps.at(0).props()).to.eql({firstName:"Petra", lastName:"Meier"});
-expect(userComps.at(1).props()).to.eql({firstName:"Peter", lastName:"Miller"});
+expect(userComps.at(0).props())
+  .to.eql({firstName:"Petra", lastName:"Meier"});
+expect(userComps.at(1).props())
+  .to.eql({firstName:"Peter", lastName:"Miller"});
 
 expect(userComps.at(0).prop("firstName")).to.eql("Petra");
 
