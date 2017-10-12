@@ -11,6 +11,7 @@ module.exports = {
         filename: "[hash].bundle.js"
     },
     plugins: [
+      new webpack.optimize.UglifyJsPlugin(),
         new HtmlWebpackPlugin({
             template: "./index.html"
         }),
