@@ -1,4 +1,4 @@
-# RR1Code
+# RR3Code
 Code for a 3-day React-Redux training.
 
 ## Prerequisites
