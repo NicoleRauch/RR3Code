@@ -1,9 +1,10 @@
 import {combineReducers} from "redux";
 
 function createReducer(initialState, handlers) {
-  return (state = initialState, action)
-    => handlers.hasOwnProperty(action.type)
-    ? handlers[action.type](state, action) : state
+  return (state = initialState, action = {}) =>
+    handlers.hasOwnProperty(action.type) ?
+      handlers[action.type](state, action) :
+      state
 }
 
 const INITIAL_STATE = {
@@ -25,8 +26,7 @@ export function addUser(user) {
 }
 
 const users = createReducer(INITIAL_STATE.users, {
-  [USER_ADDED]: (currentUsers, action)
-    => currentUsers.concat(action.payload)
+  [USER_ADDED]: (currentUsers, action) => currentUsers.concat(action.payload)
 });
 
 const products = createReducer(INITIAL_STATE.products, {
