@@ -11,7 +11,8 @@ export default class extends Component {
   }
 
   render() {
-    const highlightColor = this.state.highlighted ? "#FF0000" : "#FFFFFF";
+    const highlightColor = this.state.highlighted
+      ? "#FF0000" : "#FFFFFF";
 
     return (
       <div onClick={this._handleToggleClick}
