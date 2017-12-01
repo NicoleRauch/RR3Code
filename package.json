@@ -10,8 +10,8 @@
     "webpack": "NODE_ENV=production webpack -p --config webpack.prod.config.js",
     "build-watch": "webpack --watch --config webpack.config.js",
     "check-updates": "node_modules/.bin/ncu",
-    "test": "node_modules/.bin/mocha --compilers js:babel-core/register --recursive test",
-    "test-watch": "node_modules/.bin/mocha --watch --compilers js:babel-core/register --recursive test"
+    "test": "node_modules/.bin/mocha --compilers js:babel-core/register --require ./enzymeSetup.js --recursive test",
+    "test-watch": "node_modules/.bin/mocha --watch --compilers js:babel-core/register --require ./enzymeSetup.js --recursive test"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
@@ -22,6 +22,7 @@
     "babel-preset-react": "6.24.1",
     "babel-register": "6.26.0",
     "enzyme": "3.2.0",
+    "enzyme-adapter-react-16": "1.1.0",
     "eslint": "4.12.0",
     "eslint-plugin-react": "7.5.1",
     "html-webpack-plugin": "2.30.1",
