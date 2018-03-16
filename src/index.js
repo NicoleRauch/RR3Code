@@ -1,8 +1,9 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
+import HellowWorld from "./HelloWorldClassComponent";
 
 ReactDOM.render(
-    <p>Hello React.js!</p>
+    <HellowWorld/>
   , document.getElementById("start")
 );
 
