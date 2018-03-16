@@ -6,6 +6,7 @@ const localPort = "3000";
 const proxiedServer = "http://localhost:5555";
 
 module.exports = {
+    mode: "development",
     entry: [
         "./src/index"
     ],
