@@ -11,7 +11,7 @@ module.exports = {
     ],
     devServer: {
         contentBase: "./build",
-        lazy: false,     // always compile immediately to save time
+        lazy: false,     // always compile immediately in order to save time
         compress: false, // do not spend time on this
         host: "0.0.0.0", // server is also available externally
         overlay: {       // overlay for compiler issues
