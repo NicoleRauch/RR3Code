@@ -12,7 +12,6 @@ module.exports = {
         filename: "[hash].bundle.js"
     },
     plugins: [
-      new webpack.optimize.UglifyJsPlugin(),
         new HtmlWebpackPlugin({
             template: "./index.html"
         }),
@@ -23,6 +22,9 @@ module.exports = {
             }
         })
     ],
+    optimization: {
+        minimize: true
+    },
   module: {
     rules: [
       { test: /\.js$/,
