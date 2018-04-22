@@ -35,16 +35,17 @@ describe('UserWithHighlight', function () {
   });
 
   describe('clicking adjusts the state', function () {
-    it('the highlight state is initially set to false', function () {
+    it('the highlight state is initially false', () => {
       expect(this.user.state("highlighted")).to.be.false();
     });
 
-    it('sets the highlight state to true after click', function () {
+    it('changes highlight state to true after click', () => {
+      this.user.setState({highlighted: false});
       this.user.simulate("click");
       expect(this.user.state("highlighted")).to.be.true();
     });
 
-    it('with highlighted state set to true, sets the state to false after click', function () {
+    it('changes highlight state to false after click', () => {
       this.user.setState({highlighted: true});
       this.user.simulate("click");
       expect(this.user.state("highlighted")).to.be.false();
