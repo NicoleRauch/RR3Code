@@ -14,11 +14,12 @@ export default class extends Component {
 <div>
   <label>First name:</label>
   <input type="text"
-   onBlur={e => this.setState({firstName: e.target.value})} />
+   onBlur={e =>
+       this.setState({firstName: e.currentTarget.value})} />
 </div>
 <div>
   <label>Last name:</label>
-  <input type="text" onBlur={e => this.setState({lastName: e.target.value})} />
+  <input type="text" onBlur={e => this.setState({lastName: e.currentTarget.value})} />
 </div>
 <div>
   <button
