@@ -8,8 +8,9 @@ import {submitUser, loadUsers} from "./actions";
 
 export class AppComponent extends Component {
 
-  componentDidMount(){
-    this.props.dispatch(loadUsers());
+  constructor({dispatch}){
+    super();
+    dispatch(loadUsers());
   }
 
   render() {

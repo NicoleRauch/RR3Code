@@ -5,7 +5,7 @@ export default class extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log(e.target.firstname.value + " " + e.target.lastname.value);
+    console.log(e.currentTarget.firstname.value + " " + e.currentTarget.lastname.value);
   }
 
   render() {

@@ -14,12 +14,6 @@ export function addUser(user) {
   return {
     type: USER_ADDED,
     payload: user
-  }
-}
-
-export default function (state = INITIAL_STATE, action = {}) {
-  return {
-    users: users(state.users, action)
   };
 }
 
@@ -29,4 +23,10 @@ function users(currentUsers = INITIAL_STATE.users, action) {
       return currentUsers.concat(action.payload);
   }
   return currentUsers;
+}
+
+export default function (state = INITIAL_STATE, action = {}) {
+  return {
+    users: users(state.users, action)
+  };
 }

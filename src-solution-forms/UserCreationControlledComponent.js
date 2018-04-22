@@ -14,12 +14,12 @@ export default class extends Component {
         <div>
           <label>First name:</label>
           <input type="text" value={this.state.firstName}
-                 onChange={e => this.setState({firstName: e.target.value})} />
+                 onChange={e => this.setState({firstName: e.currentTarget.value})} />
         </div>
         <div>
           <label>Last name:</label>
           <input type="text" value={this.state.lastName}
-                 onChange={e => this.setState({lastName: e.target.value})} />
+                 onChange={e => this.setState({lastName: e.currentTarget.value})} />
         </div>
         <div>
           <button
