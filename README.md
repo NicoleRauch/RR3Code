@@ -2,6 +2,10 @@
 Code for a 3-day React-Redux training.
 
 ## Prerequisites
+
+The installation is easiest on Linux and Mac (because C++ and Python are already installed).
+But it is of course feasible on Windows, too.
+
 * Node.js version 6.x or greater
 * A suitable editor or IDE
    * e.g. Webstorm -- [there is a 30-day test version](https://www.jetbrains.com/webstorm/download/)
@@ -9,7 +13,7 @@ Code for a 3-day React-Redux training.
 * C++ and Python -- detailed installation instructions can be found in the node-gyp module README, section ["You will also need to install"](https://github.com/nodejs/node-gyp#installation)
 
 ## First Steps
-* Check out the repository from GitHub
+* Check out the repository from GitHub (or copy the zipfile and unzip it)
 * cd into that directory
 * Install required modules: `npm install`
 * Launch the development server:
@@ -36,4 +40,4 @@ To use the included examples, open the file `webpack.config.js` and change the p
     ],
 ```
 
-The examples are fully functional and build on each other (in alphabetical order). Please be aware that the final example requires a server to handle the emitted AJAX requests. This server is not included ;-)
+The examples are fully functional and build on each other (in alphabetical order, except for "async" and "forms"). Please be aware that the final example requires a server to handle the emitted AJAX requests. A basic server is provided in the directory `backend`.
