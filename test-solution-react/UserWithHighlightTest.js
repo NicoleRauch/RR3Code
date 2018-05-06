@@ -5,50 +5,52 @@ import {shallow} from "enzyme";
 import User from "../src-solution-react/UserWithHighlight";
 
 
-describe('UserWithHighlight', function () {
-  beforeEach(function () {
-    this.user = shallow(<User firstName="Peter" lastName="Meier"/>);
+describe('UserWithHighlight', () => {
+  let user;
+
+  beforeEach(() => {
+    user = shallow(<User firstName="Paul" lastName="Meier"/>);
   });
 
-  describe('state leads to correct highlighting', function () {
-    it('does not highlight the user name when the highlighted state is set to false', function () {
-      this.user.setState({highlighted: false});
+  describe('state leads to correct highlighting', () => {
+    it('does not highlight the user name when the highlighted state is set to false', () => {
+      user.setState({highlighted: false});
 
-      const highlighted = this.user.find({style: {backgroundColor: "#FF0000"}});
-      const unhighlighted = this.user.find({style: {backgroundColor: "#FFFFFF"}});
+      const highlighted = user.find({style: {backgroundColor: "#FF0000"}});
+      const unhighlighted = user.find({style: {backgroundColor: "#FFFFFF"}});
 
       expect(highlighted.length).to.be(0);
       expect(unhighlighted.length).to.be(1);
-      expect(unhighlighted.text()).to.be("Peter");
+      expect(unhighlighted.text()).to.be("Paul");
     });
 
-    it('highlights the user name when the highlighted state is set to true', function () {
-      this.user.setState({highlighted: true});
+    it('highlights the user name when the highlighted state is set to true', () => {
+      user.setState({highlighted: true});
 
-      const highlighted = this.user.find({style: {backgroundColor: "#FF0000"}});
-      const unhighlighted = this.user.find({style: {backgroundColor: "#FFFFFF"}});
+      const highlighted = user.find({style: {backgroundColor: "#FF0000"}});
+      const unhighlighted = user.find({style: {backgroundColor: "#FFFFFF"}});
 
       expect(highlighted.length).to.be(1);
-      expect(highlighted.text()).to.be("Peter");
+      expect(highlighted.text()).to.be("Paul");
       expect(unhighlighted.length).to.be(0);
     });
   });
 
-  describe('clicking adjusts the state', function () {
+  describe('clicking adjusts the state', () => {
     it('the highlight state is initially false', () => {
-      expect(this.user.state("highlighted")).to.be.false();
+      expect(user.state("highlighted")).to.be.false();
     });
 
     it('changes highlight state to true after click', () => {
-      this.user.setState({highlighted: false});
-      this.user.simulate("click");
-      expect(this.user.state("highlighted")).to.be.true();
+      user.setState({highlighted: false});
+      user.simulate("click");
+      expect(user.state("highlighted")).to.be.true();
     });
 
     it('changes highlight state to false after click', () => {
-      this.user.setState({highlighted: true});
-      this.user.simulate("click");
-      expect(this.user.state("highlighted")).to.be.false();
+      user.setState({highlighted: true});
+      user.simulate("click");
+      expect(user.state("highlighted")).to.be.false();
     });
   });
 });
