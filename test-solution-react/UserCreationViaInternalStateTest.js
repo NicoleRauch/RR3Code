@@ -1,51 +1,51 @@
 import React from "react";
 import expect from "must";
 import sinon from "sinon";
-
 import {shallow} from "enzyme";
 import UserCreation from "../src-solution-react/UserCreationViaInternalState";
 
+describe('UserCreation', () => {
+  let submit;
+  let user;
 
-describe('UserCreation', function () {
-  beforeEach(function () {
-    this.submit = sinon.spy();
-    this.user = shallow(<UserCreation submitUser={this.submit}/>);
+  beforeEach(() => {
+    submit = sinon.spy();
+    user = shallow(<UserCreation submitUser={submit}/>);
   });
 
-  it("saves the firstname to the internal state", function () {
-    const input = this.user.find("input").at(0);
-    input.simulate("blur", {target: {value: "Nicole"}});
+  it("saves the firstname to the internal state", () => {
+    const input = user.find("input").at(0);
+    input.simulate("blur", {currentTarget: {value: "Paul"}});
 
-    expect(this.user.state("firstName")).to.eql("Nicole");
+    expect(user.state("firstName")).to.eql("Paul");
   });
 
-  it("saves the lastname to the internal state", function () {
-    const input = this.user.find("input").at(1);
-    input.simulate("blur", {target: {value: "Rauch"}});
+  it("saves the lastname to the internal state", () => {
+    const input = user.find("input").at(1);
+    input.simulate("blur", {currentTarget: {value: "Meier"}});
 
-    expect(this.user.state("lastName")).to.eql("Rauch");
+    expect(user.state("lastName")).to.eql("Meier");
   });
 
-  it("invokes the callback handler", function () {
-    this.user.setState({firstName: "Nicole", lastName: "Rauch"});
-    const button = this.user.find("button"); // .first();
+  it("invokes the callback handler", () => {
+    user.setState({firstName: "Paul", lastName: "Meier"});
+    const button = user.find("button"); // .first();
     button.simulate("click");
 
-    expect(this.submit.called).to.be.true();
-    expect(this.submit.calledOnce).to.be.true();
-    expect(this.submit.calledWith({firstName: "Nicole", lastName: "Rauch"})).to.be.true();
-    expect(this.submit.getCall(0).args).to.eql([{firstName: "Nicole", lastName: "Rauch"}]); // array!
+    expect(submit.called).to.be.true();
+    expect(submit.calledOnce).to.be.true();
+    expect(submit.getCall(0).args).to.eql([{firstName: "Paul", lastName: "Meier"}]); // array!
   });
 
-  it("blackbox test", function () {
-    const inputs = this.user.find("input");
-    inputs.at(0).simulate("blur", {target:{value: "Nicole"}});
-    inputs.at(1).simulate("blur", {target:{value: "Rauch"}});
+  it("blackbox test", () => {
+    const inputs = user.find("input");
+    inputs.at(0).simulate("blur", {currentTarget:{value: "Paul"}});
+    inputs.at(1).simulate("blur", {currentTarget:{value: "Meier"}});
 
-    const button = this.user.find("button"); // .first();
+    const button = user.find("button"); // .first();
     button.simulate("click");
 
-    expect(this.submit.getCall(0).args)
-      .to.eql([{firstName: "Nicole", lastName: "Rauch"}]);
+    expect(submit.getCall(0).args)
+      .to.eql([{firstName: "Paul", lastName: "Meier"}]);
   });
 });
