@@ -13,7 +13,7 @@ export class AppComponent extends Component {
     return (
       <div>
         <UserList users={this.props.users} />
-        <UserCreation submitUser={ user => { addUser(user); } } />
+<UserCreation submitUser={ user => { addUser(user); } } />
       </div>
     );
   }
