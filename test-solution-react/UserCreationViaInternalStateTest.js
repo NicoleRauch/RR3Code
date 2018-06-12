@@ -15,14 +15,14 @@ describe('UserCreation', () => {
 
   it("saves the firstname to the internal state", () => {
     const input = user.find("input").at(0);
-    input.simulate("blur", {currentTarget: {value: "Paul"}});
+    input.simulate("blur", {target: {value: "Paul"}});
 
     expect(user.state("firstName")).to.eql("Paul");
   });
 
   it("saves the lastname to the internal state", () => {
     const input = user.find("input").at(1);
-    input.simulate("blur", {currentTarget: {value: "Meier"}});
+    input.simulate("blur", {target: {value: "Meier"}});
 
     expect(user.state("lastName")).to.eql("Meier");
   });
@@ -39,8 +39,8 @@ describe('UserCreation', () => {
 
   it("blackbox test", () => {
     const inputs = user.find("input");
-    inputs.at(0).simulate("blur", {currentTarget:{value: "Paul"}});
-    inputs.at(1).simulate("blur", {currentTarget:{value: "Meier"}});
+    inputs.at(0).simulate("blur", {target:{value: "Paul"}});
+    inputs.at(1).simulate("blur", {target:{value: "Meier"}});
 
     const button = user.find("button"); // .first();
     button.simulate("click");
