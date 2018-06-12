@@ -9,25 +9,13 @@ export default class extends Component {
     console.log("Lifecycle Component constructor.")
   }
 
-  componentWillMount() {
-    console.log("Lifecycle Component will mount.");
-  }
-
   componentDidMount() {
     console.log("Lifecycle Component did mount.");
-  }
-
-  componentWillReceiveProps() {
-    console.log("Lifecycle Component will receive props.");
   }
 
   shouldComponentUpdate() {
     console.log("Should Lifecycle Component update?");
     return true;
-  }
-
-  componentWillUpdate() {
-    console.log("Lifecycle Component will update.");
   }
 
   componentDidUpdate() {
