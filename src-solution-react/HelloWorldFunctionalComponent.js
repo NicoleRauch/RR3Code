@@ -1,3 +1,5 @@
 import React from "react";
 
-export default () => <p>Hello World!</p>;
+const HelloWorld = () => <p>Hello World!</p>;
+
+export default HelloWorld;
